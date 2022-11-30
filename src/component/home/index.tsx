@@ -90,6 +90,18 @@ const IndexHome: FunctionComponent = () => {
                 handleselect={roomHandleselect}
               />
             </div>
+            <div className="float-right">
+              <ButtonWidget
+                text="Cancel"
+                className="border-2 border-solid border-[#929292] text-[#929292] w-[100px] h-[40px] rounded-md font-medium mr-6"
+                handleSubmit={() => setShowModal(false)}
+              />
+              <ButtonWidget
+                text="Save"
+                className="bg-[#438FFE] text-white w-[100px] h-[40px] rounded-md font-medium"
+                handleSubmit={() => setShowModal(false)}
+              />
+            </div>
           </div>
         </ModalWidget>
       </div>

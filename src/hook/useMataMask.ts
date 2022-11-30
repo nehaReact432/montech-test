@@ -2,10 +2,17 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { ethers } from 'ethers';
 
+const forwarderOrigin = "http://localhost:3000/"
+
 export default function useMetaMask() {
     const [etherAccount, setEtherAccount] = useState<string | any>()
     const [wallet, setWallet] = useState<string>("")
     let windows: any
+    const installMetaMask = () => {
+        const onboarding = new MetaMaskOnboarding({ forwarderOrigin });
+
+        onboarding.startOnboarding();
+    }
     const requestAccount = async () => {
         if (windows.ethereum) {
             try {
